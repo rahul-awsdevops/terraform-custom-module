@@ -41,6 +41,6 @@ resource "aws_ebs_volume" "extra_volume" {
 resource "aws_volume_attachment" "ebs_attachment" {
   count        = var.create_extra_ebs ? 1 : 0
   device_name  = "/dev/sdf"   # Can be adjusted as needed
-  instance_id  = aws_instance.this.id
-  volume_id    = aws_ebs_volume.extra_volume.id
+  instance_id  = aws_instance.this[count.index].id
+  volume_id    = aws_ebs_volume.extra_volume[count.index].id
 }
