@@ -65,3 +65,6 @@ module "myec2" {
 output "instance_id" {
   value = module.myec2.instance_id
 }
+
+
+Visit My Gitlab :- https://gitlab.com/awsdevops3973651/terraform-custom-modules for such more custom modules.
